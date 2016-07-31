@@ -16,36 +16,68 @@ defmodule Govtrack do
     body |> Poison.decode!
   end
 
-  def bill(query \\ %{congress: 114, order_by: "current_status_date"}) do
-    get("bill", query: query)
+  def bill(id, query \\ []) do
+    get("bill/#{id}", query: Keyword.merge([congress: 114, order_by: "current_status_date"], query))
   end
 
-  def cosponsorship(query \\ %{}) do
-    get("cosponsorship")
+  def bills(query \\ []) do
+    get("bill", query: Keyword.merge([congress: 114, order_by: "current_status_date"], query))
   end
 
-  def person(query \\ %{}) do
-    get("person", query: query)
+  def cosponsorship(id, query \\ []) do
+    get("cosponsorship/#{id}", query: Keyword.merge([], query))
   end
 
-  def role(query \\ %{current: true}) do
-    get("role", query: query)
+  def cosponsorships(query \\ []) do
+    get("cosponsorship", query: Keyword.merge([], query))
   end
 
-  def vote(query \\ %{order_by: "created"}) do
-    get("vote", query: query)
+  def person(id, query \\ []) do
+    get("person/#{id}", query: Keyword.merge([], query))
   end
 
-  def vote_voter(query \\ %{order_by: "created"}) do
-    get("vote_voter", query: query)
+  def persons(query \\ []) do
+    get("person", query: Keyword.merge([], query))
   end
 
-  def committee(query \\ %{obsolete: false}) do
-    get("committee", query: query)
+  def role(id, query \\ []) do
+    get("role/#{id}", query: Keyword.merge([current: true], query))
   end
 
-  def committee_member(query \\ %{}) do
-    get("committee_member", query: query)
+  def roles(query \\ []) do
+    get("role", query: Keyword.merge([current: true], query))
+  end
+
+  def vote(id, query \\ []) do
+    get("vote/#{id}", query: Keyword.merge([order_by: "created"], query))
+  end
+
+  def votes(query \\ []) do
+    get("vote", query: Keyword.merge([order_by: "created"], query))
+  end
+
+  def vote_voter(id, query \\ []) do
+    get("vote_voter/#{id}", query: Keyword.merge([order_by: "created"], query))
+  end
+
+  def vote_voters(query \\ []) do
+    get("vote_voter", query: Keyword.merge([order_by: "created"], query))
+  end
+
+  def committee(id, query \\ []) do
+    get("committee/#{id}", query: Keyword.merge([obsolete: false], query))
+  end
+
+  def committees(query \\ []) do
+    get("committee", query: Keyword.merge([obsolete: false], query))
+  end
+
+  def committee_member(id, query \\ []) do
+    get("committee_member/#{id}", query: Keyword.merge([], query))
+  end
+
+  def committee_members(query \\ []) do
+    get("committee_member", query: Keyword.merge([], query))
   end
 
 end
