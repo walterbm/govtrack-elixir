@@ -45,5 +45,5 @@ Govtrack.bill(46233)  #=> Fetch information about a specific bill
 An optional `query` parameter can be passed to all the supported endpoints to narrow the results. The specific query strings are dictated by the [govtrack API](https://www.govtrack.us/developers/api).
 
 ```elixir
-Govtrack.roles(%{current: true, state: "NY"})    #=> Fetch a list of all representatives for the State of New York. 
+Govtrack.roles(%{current: true, state: "NY"})    #=> Fetch all representatives for the State of New York. 
 ```
