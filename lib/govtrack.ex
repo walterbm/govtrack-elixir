@@ -12,8 +12,8 @@ defmodule Govtrack do
     "#{@api_url}#{@api_version}" <> url
   end
 
-  def role() do
-    get("role")
+  def process_response_body(body) do
+    body |> Poison.decode!
   end
 
 end
