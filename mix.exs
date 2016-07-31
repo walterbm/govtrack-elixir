@@ -42,7 +42,7 @@ defmodule Govtrack.Mixfile do
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Walter Beller-Morales"],
       licenses: ["MIT"],
-      links: %{"GitHub" => ""}
+      links: %{"GitHub" => "https://github.com/walterbm/govtrack-elixir"}
     ]
   end
 end
