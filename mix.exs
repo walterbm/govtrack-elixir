@@ -37,4 +37,20 @@ defmodule Govtrack.Mixfile do
       {:poison, "~> 2.2.0"}
     ]
   end
+
+  defp description do
+    """
+    An elixir wrapper for the govtrack.us API that provides programmatic access to information about the U.S. Congress.
+    """
+  end
+
+  defp package do
+    [
+      name: :govtrack,
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Walter Beller-Morales"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => ""}
+    ]
+  end
 end
