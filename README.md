@@ -36,14 +36,14 @@ This `Govtrack` module is meant to be a simple wrapper for the official govtrack
 
 ### Basic Usage
 ```elixir
-Govtrack.bill
+Govtrack.bills        #=> Fetch all bills, ordered by most recently updated
 
-Govtrack.role
+Govtrack.bill(46233)  #=> Fetch information about a specific bill
 ```
 
 ### Querying
 An optional `query` parameter can be passed to all the supported endpoints to narrow the results. The specific query strings are dictated by the [govtrack API](https://www.govtrack.us/developers/api).
 
 ```elixir
-Govtrack.role(%{current: true, state: "NY"})
+Govtrack.roles(%{current: true, state: "NY"})    #=> Fetch a list of all representatives for the State of New York. 
 ```
