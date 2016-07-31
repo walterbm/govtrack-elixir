@@ -38,7 +38,7 @@ This `Govtrack` module is meant to be a simple wrapper for the official govtrack
 ```elixir
 Govtrack.bills        #=> Fetch all bills, ordered by most recently updated
 
-Govtrack.bill(46233)  #=> Fetch information about a specific bill
+Govtrack.bill(12700)  #=> Fetch information about a specific bill
 ```
 
 ### Querying

@@ -1,0 +1,29 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.govtrack.us/api/v2/cosponsorship/3291427?"
+    },
+    "response": {
+      "body": "{\n \"bill\": 346156, \n \"id\": 3291427, \n \"joined\": \"2016-07-25\", \n \"person\": 400158, \n \"role\": 43315, \n \"withdrawn\": null\n}",
+      "headers": {
+        "Server": "nginx/1.4.6 (Ubuntu)",
+        "Date": "Sun, 31 Jul 2016 23:38:09 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "120",
+        "Connection": "keep-alive",
+        "Cache-Control": "public",
+        "Access-Control-Allow-Origin": "*",
+        "Generated-At": "2016-07-31T19:27:52.269075",
+        "X-Konklone-Force-HTTPS": "TRUE",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

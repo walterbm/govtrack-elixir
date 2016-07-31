@@ -1,0 +1,29 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.govtrack.us/api/v2/committee/2650?obsolete=false"
+    },
+    "response": {
+      "body": "{\n \"abbrev\": \"Judiciary\", \n \"code\": \"SSJU\", \n \"committee\": null, \n \"committee_type\": \"senate\", \n \"committee_type_label\": \"Senate\", \n \"id\": 2650, \n \"jurisdiction\": null, \n \"jurisdiction_link\": null, \n \"name\": \"Senate Committee on the Judiciary\", \n \"obsolete\": false, \n \"url\": \"http://judiciary.senate.gov/\"\n}",
+      "headers": {
+        "Server": "nginx/1.4.6 (Ubuntu)",
+        "Date": "Sun, 31 Jul 2016 23:38:02 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "307",
+        "Connection": "keep-alive",
+        "Cache-Control": "public",
+        "Access-Control-Allow-Origin": "*",
+        "Generated-At": "2016-07-31T19:38:02.495651",
+        "X-Konklone-Force-HTTPS": "TRUE",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

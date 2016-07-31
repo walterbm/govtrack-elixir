@@ -1,0 +1,30 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.govtrack.us/api/v2/role/42929?current=true"
+    },
+    "response": {
+      "body": "{\n \"caucus\": null, \n \"congress_numbers\": [\n  113, \n  114, \n  115\n ], \n \"current\": true, \n \"description\": \"Junior Senator from New York\", \n \"district\": null, \n \"enddate\": \"2019-01-03\", \n \"extra\": {\n  \"address\": \"478 Russell Senate Office Building Washington DC 20510\", \n  \"contact_form\": \"http://www.gillibrand.senate.gov/contact/\", \n  \"fax\": \"202-225-1168\", \n  \"office\": \"478 Russell Senate Office Building\", \n  \"rss_url\": \"http://www.gillibrand.senate.gov/rss/\"\n }, \n \"id\": 42929, \n \"leadership_title\": null, \n \"party\": \"Democrat\", \n \"person\": {\n  \"bioguideid\": \"G000555\", \n  \"birthday\": \"1966-12-09\", \n  \"cspanid\": 1022862, \n  \"firstname\": \"Kirsten\", \n  \"gender\": \"female\", \n  \"gender_label\": \"Female\", \n  \"id\": 412223, \n  \"lastname\": \"Gillibrand\", \n  \"link\": \"https://www.govtrack.us/congress/members/kirsten_gillibrand/412223\", \n  \"middlename\": \"E.\", \n  \"name\": \"Sen. Kirsten Gillibrand [D-NY]\", \n  \"namemod\": \"\", \n  \"nickname\": \"\", \n  \"osid\": \"N00027658\", \n  \"pvsid\": \"65147\", \n  \"sortname\": \"Gillibrand, Kirsten (Sen.) [D-NY]\", \n  \"twitterid\": \"SenGillibrand\", \n  \"youtubeid\": \"KirstenEGillibrand\"\n }, \n \"phone\": \"202-224-4451\", \n \"role_type\": \"senator\", \n \"role_type_label\": \"Senator\", \n \"senator_class\": \"class1\", \n \"senator_class_label\": \"Class 1\", \n \"senator_rank\": \"junior\", \n \"senator_rank_label\": \"Junior\", \n \"startdate\": \"2013-01-03\", \n \"state\": \"NY\", \n \"title\": \"Sen.\", \n \"title_long\": \"Senator\", \n \"website\": \"http://www.gillibrand.senate.gov\"\n}",
+      "headers": {
+        "Server": "nginx/1.4.6 (Ubuntu)",
+        "Date": "Sun, 31 Jul 2016 23:38:01 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "1461",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "public",
+        "Access-Control-Allow-Origin": "*",
+        "Generated-At": "2016-07-31T19:38:01.935807",
+        "X-Konklone-Force-HTTPS": "TRUE",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
