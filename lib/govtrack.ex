@@ -16,4 +16,36 @@ defmodule Govtrack do
     body |> Poison.decode!
   end
 
+  def bill() do
+    get("bill")
+  end
+
+  def cosponsorship() do
+    get("cosponsorship")
+  end
+
+  def person() do
+    get("person")
+  end
+
+  def role() do
+    get("role")
+  end
+
+  def vote() do
+    get("vote")
+  end
+
+  def vote_voter() do
+    get("vote_voter")
+  end
+
+  def committee() do
+    get("committee")
+  end
+
+  def committee_member() do
+    get("committee_member")
+  end
+
 end
