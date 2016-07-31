@@ -10,7 +10,10 @@ defmodule Govtrack.Mixfile do
       start_permanent: Mix.env == :prod,
       description: description,
       package: package,
-      deps: deps
+      deps: deps,
+      preferred_cli_env: [
+        vcr: :test, "vcr.delete": :test, "vcr.check": :test, "vcr.show": :test
+      ]
     ]
   end
 
@@ -26,7 +29,8 @@ defmodule Govtrack.Mixfile do
   defp deps do
     [
       {:httpotion, "~> 3.0.0"},
-      {:poison, "~> 2.2.0"}
+      {:poison, "~> 2.2.0"},
+      {:exvcr, "~> 0.8", only: :test}
     ]
   end
 
