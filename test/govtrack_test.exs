@@ -1,8 +1,18 @@
 defmodule GovtrackTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: false
+  use ExVCR.Mock
+
   doctest Govtrack
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  setup_all do
+    ExVCR.Config.cassette_library_dir("test/fixtures/vcr_cassettes")
+    :ok
   end
+
+  test "retrieving bills" do
+    use_cassette "govtrack_bills" do
+      assert Govtrack.bills().body["objects"]
+    end
+  end
+
 end
