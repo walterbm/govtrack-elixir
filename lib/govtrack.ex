@@ -16,6 +16,23 @@ defmodule Govtrack do
     body |> Poison.decode!
   end
 
+  def handle_response(response) do
+    case response do
+      { :ok, _, _, body, _ } ->
+        process_response_body(body)
+      { :ok, _, _, body } ->
+        process_response_body(body)
+      { :ibrowse_req_id, id } ->
+        %{ id: id }
+      { :error, { :conn_failed, { :error, reason }}} ->
+        %{ message: error_to_string(reason)}
+      { :error, :conn_failed } ->
+        %{ message: "conn_failed"}
+      { :error, reason } ->
+        %{ message: error_to_string(reason)}
+    end
+  end
+
   @doc """
   Get information about a specific bill
   ## Example

@@ -11,97 +11,97 @@ defmodule GovtrackTest do
 
   test "retrieve all bills" do
     use_cassette "govtrack_bills" do
-      assert Govtrack.bills.body["objects"]
+      assert Govtrack.bills["objects"]
     end
   end
 
   test "retrieve single bill with id" do
     use_cassette "govtrack_bill_12700" do
-      assert Govtrack.bill(12700).body["id"] == 12700
+      assert Govtrack.bill(12700)["id"] == 12700
     end
   end
 
   test "retrieve all cosponsorships" do
     use_cassette "govtrack_cosponsorships" do
-      assert Govtrack.cosponsorships.body["objects"]
+      assert Govtrack.cosponsorships["objects"]
     end
   end
 
   test "retrieve single cosponsorship with id" do
     use_cassette "govtrack_cosponsorship_3291427" do
-      assert Govtrack.cosponsorship(3291427).body["id"] == 3291427
+      assert Govtrack.cosponsorship(3291427)["id"] == 3291427
     end
   end
 
   test "retrieve all persons" do
     use_cassette "govtrack_persons" do
-      assert Govtrack.persons.body["objects"]
+      assert Govtrack.persons["objects"]
     end
   end
 
   test "retrieve single person with id" do
     use_cassette "govtrack_person_400629" do
-      assert Govtrack.person(400629).body["id"] == 400629
+      assert Govtrack.person(400629)["id"] == 400629
     end
   end
 
   test "retrieve all roles" do
     use_cassette "govtrack_roles" do
-      assert Govtrack.roles.body["objects"]
+      assert Govtrack.roles["objects"]
     end
   end
 
   test "retrieve single role with id" do
     use_cassette "govtrack_role_42929" do
-      assert Govtrack.role(42929).body["id"] == 42929
+      assert Govtrack.role(42929)["id"] == 42929
     end
   end
 
   test "retrieve all votes" do
     use_cassette "govtrack_votes" do
-      assert Govtrack.votes.body["objects"]
+      assert Govtrack.votes["objects"]
     end
   end
 
   test "retrieve single vote with id" do
     use_cassette "govtrack_vote_13969" do
-      assert Govtrack.vote(13969).body["id"] == 13969
+      assert Govtrack.vote(13969)["id"] == 13969
     end
   end
 
   test "retrieve all vote_voters" do
     use_cassette "govtrack_vote_voters" do
-      assert Govtrack.vote_voters.body["objects"]
+      assert Govtrack.vote_voters["objects"]
     end
   end
 
   test "retrieve single vote_voter with id" do
     use_cassette "govtrack_vote_voter_31425718" do
-      assert Govtrack.vote_voter(31425718).body["id"] == 31425718
+      assert Govtrack.vote_voter(31425718)["id"] == 31425718
     end
   end
 
   test "retrieve all committees" do
     use_cassette "govtrack_committees" do
-      assert Govtrack.committees.body["objects"]
+      assert Govtrack.committees["objects"]
     end
   end
 
   test "retrieve single committee with id" do
     use_cassette "govtrack_committee_2650" do
-      assert Govtrack.committee(2650).body["id"] == 2650
+      assert Govtrack.committee(2650)["id"] == 2650
     end
   end
 
   test "retrieve all committee_members" do
     use_cassette "govtrack_committee_members" do
-      assert Govtrack.committee_members.body["objects"]
+      assert Govtrack.committee_members["objects"]
     end
   end
 
   test "retrieve single committee_member with id" do
     use_cassette "govtrack_committee_member_207975" do
-      assert Govtrack.committee_member(207975).body["id"] == 207975
+      assert Govtrack.committee_member(207975)["id"] == 207975
     end
   end
 
