@@ -17,7 +17,10 @@ defmodule GovtrackTest do
 
   test "retrieve single bill with id" do
     use_cassette "govtrack_bill_12700" do
-      assert Govtrack.bill(12700)["id"] == 12700
+      response = Govtrack.bill(12700)
+      assert response["id"] == 12700
+      response["title_without_number"] == "Patient Protection and Affordable Care Act"
+      response["current_status"] == "enacted_signed"
     end
   end
 
@@ -29,7 +32,10 @@ defmodule GovtrackTest do
 
   test "retrieve single cosponsorship with id" do
     use_cassette "govtrack_cosponsorship_3291427" do
-      assert Govtrack.cosponsorship(3291427)["id"] == 3291427
+      response = Govtrack.cosponsorship(3291427)
+      assert response["id"] == 3291427
+      assert response["bill"] == 346156
+      assert response["person"] == 400158
     end
   end
 
@@ -41,7 +47,10 @@ defmodule GovtrackTest do
 
   test "retrieve single person with id" do
     use_cassette "govtrack_person_400629" do
-      assert Govtrack.person(400629)["id"] == 400629
+      response = Govtrack.person(400629)
+      assert response["id"] == 400629
+      assert response["firstname"] == "Barack"
+      assert response["lastname"] == "Obama"
     end
   end
 
@@ -53,7 +62,10 @@ defmodule GovtrackTest do
 
   test "retrieve single role with id" do
     use_cassette "govtrack_role_42929" do
-      assert Govtrack.role(42929)["id"] == 42929
+      response = Govtrack.role(42929)
+      assert response["id"] == 42929
+      assert response["description"] == "Junior Senator from New York"
+      assert response["person"]["name"] == "Sen. Kirsten Gillibrand [D-NY]"
     end
   end
 
@@ -65,7 +77,10 @@ defmodule GovtrackTest do
 
   test "retrieve single vote with id" do
     use_cassette "govtrack_vote_13969" do
-      assert Govtrack.vote(13969)["id"] == 13969
+      response = Govtrack.vote(13969)
+      assert response["id"] == 13969
+      assert response["question"] == "H.R. 3590 (111th): Patient Protection and Affordable Care Act"
+      assert response["related_bill"]["id"] == 12700
     end
   end
 
@@ -77,7 +92,10 @@ defmodule GovtrackTest do
 
   test "retrieve single vote_voter with id" do
     use_cassette "govtrack_vote_voter_31425718" do
-      assert Govtrack.vote_voter(31425718)["id"] == 31425718
+      response = Govtrack.vote_voter(31425718)
+      assert response["id"] == 31425718
+      assert response["person"]["name"] == "Sen. Thom Tillis [R-NC]"
+      assert response["vote"]["question"] == "Cloture on H.R. 2577: Military Construction, Veterans Affairs, and Related Agencies Appropriations Act, 2017"
     end
   end
 
@@ -89,7 +107,9 @@ defmodule GovtrackTest do
 
   test "retrieve single committee with id" do
     use_cassette "govtrack_committee_2650" do
-      assert Govtrack.committee(2650)["id"] == 2650
+      response = Govtrack.committee(2650)
+      assert response["id"] == 2650
+      assert response["name"] == "Senate Committee on the Judiciary"
     end
   end
 
@@ -101,7 +121,10 @@ defmodule GovtrackTest do
 
   test "retrieve single committee_member with id" do
     use_cassette "govtrack_committee_member_207975" do
-      assert Govtrack.committee_member(207975)["id"] == 207975
+      response = Govtrack.committee_member(207975)
+      assert response["id"] == 207975
+      assert response["committee"]["name"] == "Disability Assistance and Memorial Affairs"
+      assert response["person"]["name"] == "Rep. Ralph Abraham [R-LA5]"
     end
   end
 
