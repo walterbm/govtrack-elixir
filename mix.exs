@@ -30,7 +30,8 @@ defmodule Govtrack.Mixfile do
     [
       {:httpotion, "~> 3.0.0"},
       {:poison, "~> 2.2.0"},
-      {:exvcr, "~> 0.8", only: :test}
+      {:exvcr, "~> 0.8", only: :test},
+      {:ex_doc, "~> 0.12", only: :dev}
     ]
   end
 
