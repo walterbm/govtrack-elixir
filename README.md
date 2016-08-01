@@ -6,19 +6,20 @@ An elixir wrapper for the [govtrack.us](https://www.govtrack.us/developers) API 
 
 [Available in Hex](https://hex.pm), the package can be installed by:
 
-  1. Adding `govtrack` to your list of dependencies in `mix.exs`:
-    ```elixir
-    def deps do
-      [{:govtrack, "~> 0.0.1"}]
-    end
-    ```
+1. Adding `govtrack` to your list of dependencies in `mix.exs`:
+```elixir
+def deps do
+  [{:govtrack, "~> 0.0.1"}]
+end
+```
 
-  2. Ensuring `govtrack` is initialized before your main elixir application:
-    ```elixir
-    def application do
-      [applications: [:govtrack]]
-    end
-    ```
+2. Ensuring `govtrack` is initialized before your main elixir application:
+```elixir
+def application do
+  [applications: [:govtrack]]
+end
+```
+
 ## Usage
 
 This `Govtrack` module is meant to be a simple wrapper for the official govtrack.us API. The module will automatically parse the JSON responses and provides a few sensible defaults to common queries.
