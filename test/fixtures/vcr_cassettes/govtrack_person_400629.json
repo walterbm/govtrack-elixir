@@ -6,20 +6,20 @@
       "method": "get",
       "options": [],
       "request_body": "",
-      "url": "https://www.govtrack.us/api/v2/person/400629?"
+      "url": "https://www.govtrack.us/api/v2/person/400629"
     },
     "response": {
       "body": "{\n \"bioguideid\": \"O000167\", \n \"birthday\": \"1961-08-04\", \n \"committeeassignments\": [], \n \"cspanid\": null, \n \"firstname\": \"Barack\", \n \"gender\": \"male\", \n \"gender_label\": \"Male\", \n \"id\": 400629, \n \"lastname\": \"Obama\", \n \"link\": \"https://www.govtrack.us/congress/members/barack_obama/400629\", \n \"middlename\": \"\", \n \"name\": \"President Barack Obama [D]\", \n \"namemod\": \"\", \n \"nickname\": \"\", \n \"osid\": \"N00009638\", \n \"pvsid\": \"9490\", \n \"roles\": [\n  {\n   \"caucus\": null, \n   \"congress_numbers\": [\n    109, \n    110\n   ], \n   \"current\": false, \n   \"description\": \"Senator from Illinois\", \n   \"district\": null, \n   \"enddate\": \"2008-11-16\", \n   \"extra\": null, \n   \"id\": 5124, \n   \"leadership_title\": null, \n   \"party\": \"Democrat\", \n   \"person\": 400629, \n   \"phone\": null, \n   \"role_type\": \"senator\", \n   \"role_type_label\": \"Senator\", \n   \"senator_class\": \"class3\", \n   \"senator_class_label\": \"Class 3\", \n   \"senator_rank\": null, \n   \"startdate\": \"2005-01-04\", \n   \"state\": \"IL\", \n   \"title\": \"Sen.\", \n   \"title_long\": \"Senator\", \n   \"website\": \"http://obama.senate.gov/\"\n  }, \n  {\n   \"caucus\": null, \n   \"congress_numbers\": [\n    111, \n    112, \n    113\n   ], \n   \"current\": false, \n   \"description\": \"President of the United States\", \n   \"district\": null, \n   \"enddate\": \"2013-01-20\", \n   \"extra\": {\n    \"how\": \"election\"\n   }, \n   \"id\": 5125, \n   \"leadership_title\": null, \n   \"party\": \"Democrat\", \n   \"person\": 400629, \n   \"phone\": null, \n   \"role_type\": \"president\", \n   \"role_type_label\": \"President\", \n   \"senator_class\": null, \n   \"senator_rank\": null, \n   \"startdate\": \"2009-01-20\", \n   \"state\": \"\", \n   \"title\": \"President\", \n   \"title_long\": \"President of the United States\", \n   \"website\": \"\"\n  }, \n  {\n   \"caucus\": null, \n   \"congress_numbers\": [\n    113, \n    114, \n    115\n   ], \n   \"current\": true, \n   \"description\": \"President of the United States\", \n   \"district\": null, \n   \"enddate\": \"2017-01-20\", \n   \"extra\": {\n    \"how\": \"election\"\n   }, \n   \"id\": 43155, \n   \"leadership_title\": null, \n   \"party\": \"Democrat\", \n   \"person\": 400629, \n   \"phone\": null, \n   \"role_type\": \"president\", \n   \"role_type_label\": \"President\", \n   \"senator_class\": null, \n   \"senator_rank\": null, \n   \"startdate\": \"2013-01-20\", \n   \"state\": \"\", \n   \"title\": \"President\", \n   \"title_long\": \"President of the United States\", \n   \"website\": \"\"\n  }\n ], \n \"sortname\": \"Obama, Barack (President) [D]\", \n \"twitterid\": null, \n \"youtubeid\": null\n}",
       "headers": {
         "Server": "nginx/1.4.6 (Ubuntu)",
-        "Date": "Sun, 31 Jul 2016 23:38:04 GMT",
+        "Date": "Sun, 25 Sep 2016 22:23:25 GMT",
         "Content-Type": "application/json; charset=utf-8",
         "Content-Length": "2422",
         "Connection": "keep-alive",
         "Vary": "Accept-Encoding",
         "Cache-Control": "public",
         "Access-Control-Allow-Origin": "*",
-        "Generated-At": "2016-07-31T19:38:04.017429",
+        "Generated-At": "2016-09-25T18:00:17.783556",
         "X-Konklone-Force-HTTPS": "TRUE",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
       },
