@@ -1,5 +1,5 @@
 # Govtrack
-[![Hex.pm](https://img.shields.io/hexpm/v/govtrack.svg?maxAge=2592000?style=flat-square)](https://hex.pm/packages/govtrack)
+[![Build Status](https://travis-ci.org/walterbm/govtrack-elixir.svg?branch=master)](https://travis-ci.org/walterbm/govtrack-elixir) [![Hex.pm](https://img.shields.io/hexpm/v/govtrack.svg?maxAge=2592000?style=flat-square)](https://hex.pm/packages/govtrack)
 
 An elixir wrapper for the [govtrack.us](https://www.govtrack.us/developers) API that provides programmatic access to information about the U.S. Congress.
 
