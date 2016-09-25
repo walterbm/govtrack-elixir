@@ -3,7 +3,7 @@ defmodule Govtrack do
   Wrapper for the Govtrack.us API that provides programmatic access to information about the U.S. Congress
   """
 
-  use HTTPotion.Base
+  use HTTPoison.Base
 
   @api_url "https://www.govtrack.us/api/"
   @api_version "v2"
@@ -16,23 +16,6 @@ defmodule Govtrack do
     body |> Poison.decode!
   end
 
-  def handle_response(response) do
-    case response do
-      { :ok, _, _, body, _ } ->
-        process_response_body(body)
-      { :ok, _, _, body } ->
-        process_response_body(body)
-      { :ibrowse_req_id, id } ->
-        %{ id: id }
-      { :error, { :conn_failed, { :error, reason }}} ->
-        %{ message: error_to_string(reason)}
-      { :error, :conn_failed } ->
-        %{ message: "conn_failed"}
-      { :error, reason } ->
-        %{ message: error_to_string(reason)}
-    end
-  end
-
   @doc """
   Get information about a specific bill
   ## Example
@@ -40,7 +23,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_bill
   """
   def bill(id, query \\ []) do
-    get("bill/#{id}", query: Keyword.merge([congress: 114, order_by: "current_status_date"], query))
+    get("bill/#{id}", [], Keyword.merge([congress: 114, order_by: "current_status_date"], query))
   end
 
   @doc """
@@ -50,7 +33,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_bill
   """
   def bills(query \\ []) do
-    get("bill", query: Keyword.merge([congress: 114, order_by: "current_status_date"], query))
+    get("bill", [], Keyword.merge([congress: 114, order_by: "current_status_date"], query))
   end
 
   @doc """
@@ -60,7 +43,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_cosponsorship
   """
   def cosponsorship(id, query \\ []) do
-    get("cosponsorship/#{id}", query: Keyword.merge([], query))
+    get("cosponsorship/#{id}", [], Keyword.merge([], query))
   end
 
   @doc """
@@ -70,7 +53,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_cosponsorship
   """
   def cosponsorships(query \\ []) do
-    get("cosponsorship", query: Keyword.merge([], query))
+    get("cosponsorship", [], Keyword.merge([], query))
   end
 
   @doc """
@@ -80,7 +63,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_person
   """
   def person(id, query \\ []) do
-    get("person/#{id}", query: Keyword.merge([], query))
+    get("person/#{id}", [], Keyword.merge([], query))
   end
 
   @doc """
@@ -90,7 +73,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_person
   """
   def persons(query \\ []) do
-    get("person", query: Keyword.merge([], query))
+    get("person", [], Keyword.merge([], query))
   end
 
   @doc """
@@ -100,7 +83,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_role
   """
   def role(id, query \\ []) do
-    get("role/#{id}", query: Keyword.merge([current: true], query))
+    get("role/#{id}", [], Keyword.merge([current: true], query))
   end
 
   @doc """
@@ -110,7 +93,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_role
   """
   def roles(query \\ []) do
-    get("role", query: Keyword.merge([current: true], query))
+    get("role", [], Keyword.merge([current: true], query))
   end
 
   @doc """
@@ -120,7 +103,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_vote
   """
   def vote(id, query \\ []) do
-    get("vote/#{id}", query: Keyword.merge([order_by: "created"], query))
+    get("vote/#{id}", [], Keyword.merge([order_by: "created"], query))
   end
 
   @doc """
@@ -130,7 +113,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_vote
   """
   def votes(query \\ []) do
-    get("vote", query: Keyword.merge([order_by: "created"], query))
+    get("vote", [], Keyword.merge([order_by: "created"], query))
   end
 
   @doc """
@@ -140,7 +123,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_vote_voter
   """
   def vote_voter(id, query \\ []) do
-    get("vote_voter/#{id}", query: Keyword.merge([order_by: "created"], query))
+    get("vote_voter/#{id}", [], Keyword.merge([order_by: "created"], query))
   end
 
   @doc """
@@ -150,7 +133,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_vote_voter
   """
   def vote_voters(query \\ []) do
-    get("vote_voter", query: Keyword.merge([order_by: "created"], query))
+    get("vote_voter", [], Keyword.merge([order_by: "created"], query))
   end
 
   @doc """
@@ -160,7 +143,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_committee
   """
   def committee(id, query \\ []) do
-    get("committee/#{id}", query: Keyword.merge([obsolete: false], query))
+    get("committee/#{id}", [], Keyword.merge([obsolete: false], query))
   end
 
   @doc """
@@ -170,7 +153,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_committee
   """
   def committees(query \\ []) do
-    get("committee", query: Keyword.merge([obsolete: false], query))
+    get("committee", [], Keyword.merge([obsolete: false], query))
   end
 
   @doc """
@@ -180,7 +163,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_committee_member
   """
   def committee_member(id, query \\ []) do
-    get("committee_member/#{id}", query: Keyword.merge([], query))
+    get("committee_member/#{id}", [], Keyword.merge([], query))
   end
 
   @doc """
@@ -190,7 +173,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_committee_member
   """
   def committee_members(query \\ []) do
-    get("committee_member", query: Keyword.merge([], query))
+    get("committee_member", [], Keyword.merge([], query))
   end
 
 end
