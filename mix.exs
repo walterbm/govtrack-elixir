@@ -20,7 +20,7 @@ defmodule Govtrack.Mixfile do
   def application do
     [applications:
       [
-        :httpotion,
+        :httpoison,
         :logger
       ]
     ]
@@ -28,7 +28,7 @@ defmodule Govtrack.Mixfile do
 
   defp deps do
     [
-      {:httpotion, "~> 3.0.0"},
+      {:httpoison, "~> 0.9.1"},
       {:poison, "~> 2.2.0"},
       {:exvcr, "~> 0.8", only: :test},
       {:ex_doc, "~> 0.12", only: :dev}
