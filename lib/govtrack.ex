@@ -115,7 +115,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_vote
   """
   def vote(id, query \\ []) do
-    request("vote/#{id}", Keyword.merge([order_by: "created"], query))
+    request("vote/#{id}", Keyword.merge([order_by: "-created"], query))
   end
 
   @doc """
@@ -125,7 +125,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_vote
   """
   def votes(query \\ []) do
-    request("vote", Keyword.merge([order_by: "created"], query))
+    request("vote", Keyword.merge([order_by: "-created"], query))
   end
 
   @doc """
@@ -135,7 +135,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_vote_voter
   """
   def vote_voter(id, query \\ []) do
-    request("vote_voter/#{id}", Keyword.merge([order_by: "created"], query))
+    request("vote_voter/#{id}", Keyword.merge([order_by: "-created"], query))
   end
 
   @doc """
@@ -145,7 +145,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_vote_voter
   """
   def vote_voters(query \\ []) do
-    request("vote_voter", Keyword.merge([order_by: "created"], query))
+    request("vote_voter", Keyword.merge([order_by: "-created"], query))
   end
 
   @doc """
