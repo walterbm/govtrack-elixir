@@ -35,7 +35,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_bill
   """
   def bill(id, query \\ []) do
-    request("bill/#{id}", Keyword.merge([congress: 114, order_by: "current_status_date"], query))
+    request("bill/#{id}", Keyword.merge([congress: 114, order_by: "-current_status_date"], query))
   end
 
   @doc """
@@ -45,7 +45,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_bill
   """
   def bills(query \\ []) do
-    request("bill", Keyword.merge([congress: 114, order_by: "current_status_date"], query))
+    request("bill", Keyword.merge([congress: 114, order_by: "-current_status_date"], query))
   end
 
   @doc """
