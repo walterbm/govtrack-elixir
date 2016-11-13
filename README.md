@@ -10,7 +10,7 @@ An elixir wrapper for the [govtrack.us](https://www.govtrack.us/developers) API 
 1. Adding `govtrack` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
-  [{:govtrack, "~> 0.7.0"}]
+  [{:govtrack, "~> 0.7.3"}]
 end
 ```
 
