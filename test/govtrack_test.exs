@@ -129,8 +129,8 @@ defmodule GovtrackTest do
 
   test "retrieve single committee_member with id" do
     use_cassette "govtrack_committee_member_207975" do
-      response = Govtrack.committee_member(207975)
-      assert response["id"] == 207975
+      response = Govtrack.committee_member(211747)
+      assert response["id"] == 211747
       assert response["committee"]["name"] == "Disability Assistance and Memorial Affairs"
       assert response["person"]["name"] == "Rep. Ralph Abraham [R-LA5]"
     end
