@@ -5,6 +5,9 @@ defmodule Govtrack do
 
   use HTTPoison.Base
 
+  require IEx
+
+
   @api_url "https://www.govtrack.us/api/"
   @api_version "v2"
 
@@ -17,7 +20,7 @@ defmodule Govtrack do
   end
 
   defp request(url, options) do
-    request(:get, url, "", [], options) |> process_response
+    get(url, [], [params: options]) |> process_response
   end
 
   defp process_response({:ok, %HTTPoison.Response{status_code: 200, body: body}}) do
@@ -35,7 +38,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_bill
   """
   def bill(id, query \\ []) do
-    request("bill/#{id}", Keyword.merge([congress: 114, order_by: "-current_status_date"], query))
+    request("bill/#{id}", Keyword.merge([sort: "-current_status_date"], query))
   end
 
   @doc """
@@ -45,7 +48,7 @@ defmodule Govtrack do
   More info at: https://www.govtrack.us/developers/api#endpoint_bill
   """
   def bills(query \\ []) do
-    request("bill", Keyword.merge([congress: 114, order_by: "-current_status_date"], query))
+    request("bill", Keyword.merge([sort: "-current_status_date"], query))
   end
 
   @doc """
